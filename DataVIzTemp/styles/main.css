@@ -1,0 +1,19 @@
+.km-view .k-qrcode > svg {
+    margin: 1em auto;
+}
+.km-view .w-tools {
+    width: 100%;
+    text-align: center;
+    padding: 2em;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.km-view .w-tools input[type="text"] {
+    display: block;
+    width: 100%;
+}
+.km-view .w-tools .km-button {
+    margin: 1em auto;
+    display: block;
+    width: 150px;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kendo UI DataViz</title>
+    <meta charset="UTF-8" />
+
+    <link href="kendo/styles/kendo.dataviz.mobile.min.css" rel="stylesheet" />
+
+    <!-- Once the final theme is chosen the redundant css reference should removed -->
+    <link href="kendo/styles/kendo.dataviz.flat.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.dataviz.silver.min.css" rel="stylesheet" />
+
+    <link href="styles/main.css" rel="stylesheet" />
+
+    <script src="cordova.js"></script>
+    <script src="kendo/js/jquery.min.js"></script>
+    <script src="kendo/js/kendo.dataviz.mobile.min.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/pie-chart.js"></script>
+    <script src="scripts/gauge.js"></script>
+    <script src="scripts/qr-code.js"></script>
+    <script src="scripts/stock-chart.js"></script>
+</head>
+
+<body>
+    <!-- Pie Chart View -->
+    <div id="tabstrip-pie-chart"
+        data-role="view"
+        data-title="Pie Chart"
+        data-show="app.pieChart.createPieChart"
+        data-hide="app.pieChart.unbindResizeEvent"
+        data-stretch="true">
+
+        <div id="pie-chart"></div>
+    </div>
+
+    <!-- Gauge View -->
+    <div id="tabstrip-gauge"
+        data-role="view"
+        data-title="Gauge"
+        data-show="app.gauge.createGauge"
+        data-hide="app.gauge.unbindResizeEvent">
+
+        <div>
+            <div id="gauge"></div>
+            <div class="w-tools">
+                <input id="gauge-value" type="range">
+            </div>
+        </div>
+    </div>
+
+    <!-- QR Code View -->
+    <div id="tabstrip-qrcode"
+        data-role="view"
+        data-title="QR Code"
+        data-show="app.qrcode.createQRCode">
+
+        <div>
+            <div id="qrcode"></div>
+            <div class="w-tools">
+                <form onsubmit="return false;">
+                    <input id="qrcode-value" type="text" value="http://www.telerik.com/appbuilder">
+                    <input id="qrcode-generate" type="submit" data-role="button" value="Update QR" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stock Chart View -->
+    <div id="tabstrip-stock-chart"
+        data-role="view"
+        data-title="Stock Chart"
+        data-show="app.stockChart.createStockChart"
+        data-hide="app.stockChart.unbindResizeEvent"
+        data-stretch="true">
+
+        <div id="stock-chart"></div>
+    </div>
+
+    <!--Layout-->
+    <div data-role="layout" data-id="mobile-tabstrip">
+        <!--Header-->
+        <div data-role="header">
+            <div data-role="navbar">
+                <span data-role="view-title"></span>
+                <a data-align="right" data-role="button" data-click="app.changeSkin">Flat</a>
+            </div>
+        </div>
+
+        <!--Footer-->
+        <div data-role="footer">
+            <div data-role="tabstrip">
+                <a href="#/" data-icon="globe">Pie Chart</a>
+                <a href="#tabstrip-gauge" data-icon="recents">Gauge</a>
+                <a href="#tabstrip-qrcode" data-icon="camera">QR Code</a>
+                <a href="#tabstrip-stock-chart" data-icon="featured">Stock Chart</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
